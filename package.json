@@ -1,0 +1,12 @@
+{
+	"name": "@prokotol/prokotol",
+	"version": "0.0.1",
+	"description": "Content platform",
+	"main": "index.js",
+	"author": "cechi",
+	"license": "MIT",
+	"workspaces": [
+		"packages/*"
+	],
+	"packageManager": "yarn@4.5.1"
+}
