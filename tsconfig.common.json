@@ -1,0 +1,41 @@
+{	
+	"compilerOptions": {
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+		"noImplicitAny": true,
+		"module": "CommonJS",
+		"target": "ES2018",
+		"allowJs": false,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true,
+		"baseUrl": ".",
+		"paths": {
+			"@prokotol/protocol": ["packages/prktl-protocol"]
+		}
+		// "paths": {
+		// 	"@reporting/rp-auth-client": ["packages/rp-auth-client"],
+		// 	"@reporting/rp-auth-client-v2": ["packages/rp-auth-client-v2"],
+		// 	"@reporting/rp-api-client-v1": ["packages/rp-api-client-v1"],
+		// 	"@reporting/rp-excel-addin": ["packages/rp-excel-addin"],
+		// 	"@reporting/rp-mf-analytics": ["packages/rp-mf-analytics"],
+		// 	"@reporting/rp-mf-etl": ["packages/rp-mf-etl"],
+		// 	"@reporting/rp-mf-ext": ["packages/rp-mf-ext"],
+		// 	"@reporting/rp-mf-jobs": ["packages/rp-mf-jobs"],
+		// 	"@reporting/rp-mf-users": ["packages/rp-mf-users"],
+		// 	"@reporting/rp-types": ["packages/rp-types"],
+		// 	"@reporting/rp-utils-csv": ["packages/rp-utils-csv"],
+		// }
+	},
+	"exclude": [
+		"*.config.js",
+		"*.config.cjs",
+		"**/jest.config.ts",
+		"**/dist/**",
+		"**/*.spec.ts",
+		"**/*.test.ts"
+	]
+}

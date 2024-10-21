@@ -1,0 +1,16 @@
+{
+	"extends": "../../tsconfig.common.json",
+	"compilerOptions": {
+		// "composite": true,
+		"outDir": "./dist",
+		"rootDir": "./src"
+	}
+	// "references": [
+	// 	{"path": "../rp-app-host"},
+	// 	{"path": "../rp-mf-analytics"},
+	// 	{"path": "../rp-mf-etl"},
+	// 	{"path": "../rp-mf-ext"},
+	// 	{"path": "../rp-mf-jobs"},
+	// 	{"path": "../rp-mf-users"}
+	// ]
+}

@@ -1,0 +1,12 @@
+{
+	"extends": "../../tsconfig.common.json",
+	"compilerOptions": {
+		"composite": true,
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"baseUrl": "./dist",
+	},
+	"references": [
+		{"path": "../prktl-protocol"},
+	]
+}

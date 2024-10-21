@@ -1,15 +1,21 @@
+type Guid = string;
+
 type Entity = {
 	/* guid as a unique identifier for the entity */
-	id: string;
-	/* date of creation */
+	id: Guid;
+	/* created at */
 	ca: Date;
-	/** author of the message */
+	/** created by user */
 	cb: string;
+	/* deleted at */
+	da: Date;
+	/** deleted by user */
+	db: string;
 }
 
 export type Space = Entity & {
 	/* id of the parent space */
-	p: string;
+	s: Guid;
 	/* name of the space */
 	n: string;
 	/* tags for the space */
@@ -17,10 +23,10 @@ export type Space = Entity & {
 }
 
 export type Message = Entity & {
-	/* content of the message */
-	c: string;
 	/* id of the parent space */
 	s: string;
+	/* content of the message */
+	d: string;
 	/* tags for the message */
 	t: string[];
 	/** type of the message */
@@ -34,6 +40,13 @@ export type User = Entity & {
 	e: string;
 	/* password hash of the user */
 	p: string;
+}
+
+export type Subscription = Entity & {
+	/* name of the user */
+	n: string;
+	/* id of the space */
+	s: Guid;
 }
 
 export interface Relay {

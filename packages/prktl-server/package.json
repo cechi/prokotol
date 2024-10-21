@@ -1,0 +1,25 @@
+{
+	"name": "@prokotol/server",
+	"description": "Server implementation of prokotol, with MongoDB",
+	"version": "0.0.1",
+	"author": "cechi",
+	"license": "MIT",
+	"scripts": {
+		"start": "node dist/index.js",
+		"watch": "nodemon --watch 'src/**/*.ts' --exec node -r ts-node/register --env-file=../../.env ./src/index.ts",
+		"build": "tsc",
+		"nodemon": "nodemon --help config"
+	},
+	"devDependencies": {
+		"@types/express": "^4",
+		"@types/node": "^22.7.7",
+		"nodemon": "^3.1.7",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.3"
+	},
+	"dependencies": {
+		"dotenv": "^16.4.5",
+		"express": "^4.21.1",
+		"mongodb": "^6.9.0"
+	}
+}
