@@ -208,38 +208,80 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@omegagrid/commands@npm:^0.3.30":
-  version: 0.3.30
-  resolution: "@omegagrid/commands@npm:0.3.30"
+"@omegagrid/commands@npm:^0.3.31":
+  version: 0.3.31
+  resolution: "@omegagrid/commands@npm:0.3.31"
   dependencies:
-    "@omegagrid/core": "npm:^0.3.30"
+    "@omegagrid/core": "npm:^0.3.31"
     lit: "npm:^3.1.1"
     lit-html: "npm:^3.1.1"
     ts-debounce: "npm:^4.0.0"
-  checksum: 10c0/825da5d10fde202566287dab2e9c3c6b553f6b3c6c60a209b53fd81a900e0182d2b28d977b01ce0af1c815782d2d56cf9e25bf083022344c8d3a998b86401b4c
+  checksum: 10c0/47691d09dbad9c4f085360491164fb7c3ed61f3433a9aaa9e68e4e325db045835f0153441351153c59751017f3e4dcf98987d0feba802cb0fa6a43b6b3d0da17
   languageName: node
   linkType: hard
 
-"@omegagrid/core@npm:^0.3.30":
-  version: 0.3.30
-  resolution: "@omegagrid/core@npm:0.3.30"
+"@omegagrid/core@npm:^0.3.31":
+  version: 0.3.31
+  resolution: "@omegagrid/core@npm:0.3.31"
   dependencies:
     "@fortawesome/fontawesome-svg-core": "npm:6.4.2"
-    "@omegagrid/localize": "npm:^0.3.30"
+    "@omegagrid/localize": "npm:^0.3.31"
     "@riovir/wc-fontawesome": "npm:^0.1.9"
     color: "npm:^4.2.3"
     date-fns: "npm:^3.2.0"
     lit: "npm:^3.1.1"
     lit-html: "npm:^3.1.1"
     ts-debounce: "npm:^4.0.0"
-  checksum: 10c0/5251ec3abe73d6bf6ff2f3868b2a0eaf79d6c319e0593a82105f420c25510dbecb8c206d1513d9f19b156d4da5a8d2ed53645b00623a442a17d320b3aa45282e
+  checksum: 10c0/9960d1547a0d43c59f4edbcddb13211d3b786674eae5e3567d707e057a019628db7c618f3341c0c5c4b90af6506ad0fb4a99ebeb3791894bff5b099f3c85a057
   languageName: node
   linkType: hard
 
-"@omegagrid/localize@npm:^0.3.30":
-  version: 0.3.30
-  resolution: "@omegagrid/localize@npm:0.3.30"
-  checksum: 10c0/6fe3617357f4e953d32d805ff674e754005a27d3f427417c442be5c9a9d2b3fad09f2acb1f908a5b52bc720d92b4c1ee276d2dd5faf7c5cdb39790d5bb71c811
+"@omegagrid/dialog@npm:^0.3.31":
+  version: 0.3.31
+  resolution: "@omegagrid/dialog@npm:0.3.31"
+  dependencies:
+    "@fortawesome/fontawesome-svg-core": "npm:6.4.2"
+    "@omegagrid/core": "npm:^0.3.31"
+    "@riovir/wc-fontawesome": "npm:^0.1.9"
+    lit: "npm:^3.1.1"
+    monaco-editor: "npm:^0.45.0"
+    ts-debounce: "npm:^4.0.0"
+    vscode-loader: "npm:^1.0.2"
+  checksum: 10c0/efd2bd020bf6159ba3980a6641fbb376b7318f969d3f6f5ceeaec55058aeb193d094181c5f905839a7326b01f97ce0732cf20abd12ff4c340e218b3f6ba1ce27
+  languageName: node
+  linkType: hard
+
+"@omegagrid/form@npm:^0.3.31":
+  version: 0.3.31
+  resolution: "@omegagrid/form@npm:0.3.31"
+  dependencies:
+    "@omegagrid/core": "npm:^0.3.31"
+    "@omegagrid/tree": "npm:^0.3.31"
+    lit: "npm:^3.1.1"
+    lit-html: "npm:^3.1.1"
+    ts-debounce: "npm:^4.0.0"
+  checksum: 10c0/eccd763fb68694798111679c02dcf0fbfd53a2ef91c8993c5b0185563aedabe533c2658b38315db77dc836a70acdd943f9c7b01dc8cb21ec6432eb4d1bc7c484
+  languageName: node
+  linkType: hard
+
+"@omegagrid/localize@npm:^0.3.31":
+  version: 0.3.31
+  resolution: "@omegagrid/localize@npm:0.3.31"
+  checksum: 10c0/af712d6a5b52720919093f65d419898bbea474380626c5d60bb164ee829e7f335b73ce294da5b9c46d926f7cd57dfbc562e69048eb974fb31621329e367347c0
+  languageName: node
+  linkType: hard
+
+"@omegagrid/tree@npm:^0.3.31":
+  version: 0.3.31
+  resolution: "@omegagrid/tree@npm:0.3.31"
+  dependencies:
+    "@omegagrid/core": "npm:^0.3.31"
+    "@omegagrid/localize": "npm:^0.3.31"
+    date-fns: "npm:^3.2.0"
+    lit: "npm:^3.1.1"
+    lit-html: "npm:^3.1.1"
+    ts-debounce: "npm:^4.0.0"
+  checksum: 10c0/7e026b8fa8bbcc99cb08952ca237bb9a59c4e0b29dc88b79e47961afbf71fa24257da94c9fd1f5a7c102d380fa7bf7952693e01922a300043999c35c870ef5e7
   languageName: node
   linkType: hard
 
@@ -256,8 +298,12 @@ __metadata:
   dependencies:
     "@fortawesome/fontawesome-svg-core": "npm:6.4.2"
     "@fortawesome/free-solid-svg-icons": "npm:6.4.2"
-    "@omegagrid/commands": "npm:^0.3.30"
-    "@omegagrid/core": "npm:^0.3.30"
+    "@omegagrid/commands": "npm:^0.3.31"
+    "@omegagrid/core": "npm:^0.3.31"
+    "@omegagrid/dialog": "npm:^0.3.31"
+    "@omegagrid/form": "npm:^0.3.31"
+    "@omegagrid/localize": "npm:^0.3.31"
+    "@omegagrid/tree": "npm:^0.3.31"
     "@prokotol/protocol": "workspace:^"
     dotenv: "npm:^16.4.5"
     html-webpack-plugin: "npm:^5.6.2"
@@ -2905,6 +2951,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"monaco-editor@npm:^0.45.0":
+  version: 0.45.0
+  resolution: "monaco-editor@npm:0.45.0"
+  checksum: 10c0/77b1522dbbf06b582f143a7be22f48ad82e5cade3f22c26fc19086446e473c720b2147f8a1ac6edf2172abf5d6bc92a5e858f62fb60df8617f8532f1fa1119ab
+  languageName: node
+  linkType: hard
+
 "mongodb-connection-string-url@npm:^3.0.0":
   version: 3.0.1
   resolution: "mongodb-connection-string-url@npm:3.0.1"
@@ -4289,6 +4342,13 @@ __metadata:
   version: 1.1.2
   resolution: "vary@npm:1.1.2"
   checksum: 10c0/f15d588d79f3675135ba783c91a4083dcd290a2a5be9fcb6514220a1634e23df116847b1cc51f66bfb0644cf9353b2abb7815ae499bab06e46dd33c1a6bf1f4f
+  languageName: node
+  linkType: hard
+
+"vscode-loader@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "vscode-loader@npm:1.0.2"
+  checksum: 10c0/168e3defbd43b7e2ac919c144c5cef22c0869786eba0ef98bc01e8699c95dc92ebe1ffcf5da7b7a6db3918bb6264efe1a7982b8d8051374d34691a6ebbb3f5ef
   languageName: node
   linkType: hard
 

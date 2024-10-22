@@ -1,6 +1,7 @@
 import { css, html } from "lit";
 import { BaseElement } from "./BaseElement";
 import { customElement } from "lit/decorators.js";
+import { msg } from "@omegagrid/localize";
 
 @customElement("prktl-sidebar")
 export class Sidebar extends BaseElement {
@@ -18,6 +19,10 @@ export class Sidebar extends BaseElement {
 			border-bottom: 1px solid var(--og-border-color);
 		}
 
+		og-panel {
+			border: none;
+		}
+
 		prktl-spaces {
 			flex: 1;
 		}
@@ -25,7 +30,23 @@ export class Sidebar extends BaseElement {
 
 	render = () => html`
 		<prktl-header></prktl-header>
-		<prktl-spaces></prktl-spaces>
+
+		<og-panel icon="layer-group">
+			<div slot="header" style="display: flex; flex-direction: row">
+				<div style="flex: 1">${msg('Spaces')}</div>
+				<div>
+					<og-button
+						icon="plus"
+						color="transparent"
+						style="height: 10px"
+						@click="${() => this.container.app.openDialog('space')}">
+					</og-button>
+				</div>
+			</div>
+			<div slot="body">
+				<prktl-spaces></prktl-spaces>
+			</div>
+		</og-panel>
 	`;
 
 }

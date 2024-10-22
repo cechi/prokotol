@@ -20,8 +20,12 @@
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "6.4.2",
 		"@fortawesome/free-solid-svg-icons": "6.4.2",
-		"@omegagrid/commands": "^0.3.30",
-		"@omegagrid/core": "^0.3.30",
+		"@omegagrid/commands": "^0.3.31",
+		"@omegagrid/core": "^0.3.31",
+		"@omegagrid/dialog": "^0.3.31",
+		"@omegagrid/form": "^0.3.31",
+		"@omegagrid/localize": "^0.3.31",
+		"@omegagrid/tree": "^0.3.31",
 		"@prokotol/protocol": "workspace:^",
 		"lit": "^3.2.1"
 	}

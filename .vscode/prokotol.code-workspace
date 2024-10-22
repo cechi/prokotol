@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "..",
+			"name": "prokotol"
+		},
+		{
+			"path": "../packages/prktl-client",
+		},
+		{
+			"path": "../packages/prktl-server",
+		},
+		{
+			"path": "../packages/prktl-protocol",
+		}
+	],
+	"settings": {
+		"files.eol": "\n",
+		"npm.packageManager": "yarn",
+		"terminal.integrated.cwd": "${workspaceFolder:prokotol}",
+		"typescript.tsdk": ".yarn/sdks/typescript/lib",
+		"typescript.enablePromptUseWorkspaceTsdk": true
+	}
+}

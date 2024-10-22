@@ -1,4 +1,6 @@
-import { CSSResultGroup, LitElement, css } from 'lit';
+import { LitElement, css } from 'lit';
+import { property } from 'lit/decorators.js';
+import { Container } from '../model/Container';
 
 export class BaseElement extends LitElement {
 
@@ -11,5 +13,8 @@ export class BaseElement extends LitElement {
 			display: block;
 		}	
 	`];
+
+	@property({type: Object})
+	container: Container;
 
 }
