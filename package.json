@@ -4,7 +4,6 @@
 	"description": "Content platform",
 	"main": "index.js",
 	"author": "cechi",
-	"license": "MIT",
 	"workspaces": [
 		"packages/*"
 	],
