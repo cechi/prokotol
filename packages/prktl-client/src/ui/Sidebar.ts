@@ -39,7 +39,7 @@ export class Sidebar extends BaseElement {
 						icon="plus"
 						color="transparent"
 						style="height: 10px"
-						@click="${() => this.container.app.openDialog('space')}">
+						@click="${() => this.container.app.openDialog('spaceForm')}">
 					</og-button>
 				</div>
 			</div>

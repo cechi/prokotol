@@ -1,9 +1,9 @@
 import { css, html } from 'lit';
-import { customElement, property, query } from 'lit/decorators.js';
+import { customElement, property, query, state } from 'lit/decorators.js';
 import { BaseElement } from './ui/BaseElement';
 import { CommandWindow } from '@omegagrid/commands';
 import { Container } from './model/Container';
-import { Dialog } from '@omegagrid/dialog';
+import { Dialog, DialogEvent } from '@omegagrid/dialog';
 import { createRef, ref } from 'lit/directives/ref.js';
 import { ComponentFactory, ComponentId } from '@omegagrid/core';
 import { createComponent } from './factory';
@@ -42,14 +42,20 @@ export class App extends BaseElement {
 	@property({type: Object})
 	container: Container;
 
-	async createComponent(id: ComponentId) {
-		const c = await createComponent(id);
+	dialogRef = createRef<Dialog>();
+	get dialog() { return this.dialogRef?.value; }
+
+	@state()
+	dialogOptions: {
+		component: BaseElement;
+		title: string;
+	}
+
+	createComponent: ComponentFactory<BaseElement> = async (id: ComponentId) => {
+		const c = await createComponent(id, this.container) as BaseElement;
 		c.container = this.container;
 		return c;
 	}
-
-	dialogRef = createRef<Dialog>();
-	get dialog() { return this.dialogRef?.value; }
 
 	connectedCallback() {
 		super.connectedCallback();
@@ -58,8 +64,29 @@ export class App extends BaseElement {
 
 	async openDialog(id: ComponentId) {
 		this.dialog.open(document.body, {x: 'center', y: 30});
-		this.dialog.component = await this.createComponent(id);
-		return this.dialog;
+		this.dialogOptions = {
+			component: await this.createComponent(id),
+			title: 'Dialog 123'
+		};
+		this.dialog.component = this.dialogOptions.component;
+	}
+
+	_onDialogButtonClick = async (e: DialogEvent) => {
+		if (e.button === 'ok') {
+			if (this.dialogOptions.component) {
+				e.preventDefault();
+				e.dialog.showLoader();
+				await new Promise(resolve => setTimeout(resolve, 2000));
+				(this.dialogOptions.component as any).save(true);
+				e.dialog.hideLoader();
+				e.dialog.close();
+			}
+		}
+	}
+
+	_onDialogClose = () => {
+		this.dialog.component = null;
+		this.dialogOptions = null;
 	}
 
 	render = () => html`
@@ -68,8 +95,10 @@ export class App extends BaseElement {
 		<og-dialog ${ref(this.dialogRef)}
 			.buttons="${['ok', 'close']}"
 			style="height: 300px"
+			@dialog.click="${this._onDialogButtonClick}"
+			@dialog.close="${this._onDialogClose}"
 			closable>
-			<div slot="header">Dialog</div>
+			<div slot="header">${this.dialogOptions?.title}</div>
 			<div slot="content">Dialog body</div>
 		</og-dialog>
 
