@@ -1,9 +1,9 @@
 import { FormAdapter, FormAlert, FormColumn, FormControlProperties, FormControlType, FormValues } from "@omegagrid/form";
-import { Client } from "../model/Client";
+import { Relay } from "../model/Relay";
 
 export class SpaceFormAdapter extends FormAdapter {
 
-	constructor(private client: Client) {
+	constructor(private relay: Relay, private spaceId?: string) {
 		super();
 	}
 
@@ -21,10 +21,12 @@ export class SpaceFormAdapter extends FormAdapter {
 			row: 0,
 			col: 1,
 			type: FormControlType.TextInput,
+			required: true,
 		}];
 	}
 
 	async save(values: Map<string | number, FormValues>): Promise<boolean | FormAlert[]> {
+		//await this.relay.createSpace();
 		console.log('save', values);
 		return true;
 	}

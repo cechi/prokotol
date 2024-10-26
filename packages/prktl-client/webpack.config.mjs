@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import webpack from 'webpack';
 import fs from 'fs';
 
-// const packageConfig = JSON.parse(fs.readFileSync('./package.json'));
+const packageConfig = JSON.parse(fs.readFileSync('./package.json'));
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({path: path.resolve(__dirname, '../../.env')});
 
@@ -76,19 +76,17 @@ export default (env, args) => {
 			new HtmlWebpackPlugin({
 				filename: 'index.html',
 				title: 'PRKTL',
-				template: './src/index.html',
+				template: './static/index.html',
 				//inject: 'body',
 				hash: true,
 				// publicPath: dev ? 'auto' : (process.env.RP_APP_ROOT + '/js'),
 			}),
-			// new webpack.DefinePlugin({
-			// 	'process.env.PACKAGE_NAME': JSON.stringify(packageConfig.name),
-			// 	'process.env.PACKAGE_VERSION': JSON.stringify(packageConfig.version),
-			// 	'process.env.MODE': JSON.stringify(dev ? 'development' : 'production'),
-			// 	'process.env.AUTH_URL': JSON.stringify(dev ? `http://localhost:${process.env.DEV_AUTH_PORT || 3011}` : (process.env.RP_APP_ROOT + '/auth')),
-			// 	'process.env.APP_ROOT': JSON.stringify(dev ? `http://localhost:${process.env.DEV_APP_PORT || 3010}` : process.env.RP_APP_ROOT),
-			// 	'process.env.TEST_ACCESS_TOKEN': JSON.stringify(dev ? process.env.TEST_ACCESS_TOKEN : null),
-			// })
+			new webpack.DefinePlugin({
+				'process.env.PACKAGE_NAME': JSON.stringify(packageConfig.name),
+				'process.env.PACKAGE_VERSION': JSON.stringify(packageConfig.version),
+				'process.env.MODE': JSON.stringify(dev ? 'development' : 'production'),
+				'process.env.PRKTL_SERVER_URL': JSON.stringify(process.env.PRKTL_SERVER_URL)
+			})
 		]
 	};
 };

@@ -3,6 +3,7 @@ import { BaseElement } from "./ui/BaseElement";
 import { FormContainer } from "@omegagrid/form";
 import { SpaceFormAdapter } from "./adapters/SpaceFormAdapter";
 import { Container } from "./model/Container";
+import { parseComponentId } from "./utils";
 
 let factories: Map<string, ComponentFactory<HTMLElement>>;
 
@@ -10,7 +11,7 @@ function getFactories(container: Container) {
 	return factories ?? (factories = new Map<string, ComponentFactory<HTMLElement>>([
 		['spaceForm', (id: ComponentId) => {
 			const form = dom.createElement<FormContainer>('og-form-container');
-			form.adapter = new SpaceFormAdapter(container);
+			form.adapter = new SpaceFormAdapter(container.relay);
 			return form;
 		}],	['space', (id: ComponentId) => {
 			const div = dom.createElement<BaseElement>('div');
@@ -25,7 +26,7 @@ function getFactories(container: Container) {
 }
 
 export function createComponent(componentId: ComponentId, container: Container) : HTMLElement|Promise<HTMLElement> {
-	const [type, id] = (componentId as string).split(':');
-	const f = getFactories(container).get(type) ?? getFactories(container).get('empty');
+	const parsedId = parseComponentId(componentId);
+	const f = getFactories(container).get(parsedId.type) ?? getFactories(container).get('empty');
 	return f(componentId);
 }

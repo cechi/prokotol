@@ -8,11 +8,15 @@ import { dom, getThemeManager } from '@omegagrid/core';
 import { registerIcons } from './icons';
 import { Container } from './model/Container';
 import { App } from './App';
-import { Client } from './model/Client';
+import { Relay } from './model/Relay';
+import { validate } from '@prokotol/protocol/dist/validators';
 
 registerIcons();
 
 const container = new Container();
+
+const url = new URL(window.location.href);
+const PRKTL_API_URL = url.origin + url.pathname + '_prktl';
 
 // themes
 container.themeManager = getThemeManager();
@@ -26,7 +30,9 @@ container.app = dom.createElement<App>('prktl-app');
 container.app.container = container;
 
 // api client
-container.client = new Client();
+container.relay = new Relay({
+	baseUrl: PRKTL_API_URL,
+});
 
 dom.empty(document.body);
 dom.appendElement(document.body, container.app);

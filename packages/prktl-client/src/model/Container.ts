@@ -1,11 +1,11 @@
 import { ThemeManager } from "@omegagrid/core";
 import { App } from "../App";
-import { Client } from "./Client";
+import { Relay } from "./Relay";
 
 export class Container {
 
 	app: App;
-	client: Client;
+	relay: Relay;
 	themeManager: ThemeManager;
 
 }

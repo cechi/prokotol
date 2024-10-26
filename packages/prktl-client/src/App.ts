@@ -7,6 +7,7 @@ import { Dialog, DialogEvent } from '@omegagrid/dialog';
 import { createRef, ref } from 'lit/directives/ref.js';
 import { ComponentFactory, ComponentId } from '@omegagrid/core';
 import { createComponent } from './factory';
+import { FormContainer } from '@omegagrid/form';
 
 
 @customElement('prktl-app')
@@ -64,22 +65,22 @@ export class App extends BaseElement {
 
 	async openDialog(id: ComponentId) {
 		this.dialog.open(document.body, {x: 'center', y: 30});
-		this.dialogOptions = {
-			component: await this.createComponent(id),
-			title: 'Dialog 123'
-		};
-		this.dialog.component = this.dialogOptions.component;
+		const component = await this.createComponent(id);
+		this.dialogOptions = {component: component, title: 'Dialog'};
+		if (component instanceof FormContainer) 
+			component.addEventListener('form.save', () => this.dialog.close(), {once: true});
+		this.dialog.component = component;
 	}
 
 	_onDialogButtonClick = async (e: DialogEvent) => {
 		if (e.button === 'ok') {
-			if (this.dialogOptions.component) {
+			const component = this.dialogOptions?.component;
+			if (component) {
 				e.preventDefault();
 				e.dialog.showLoader();
-				await new Promise(resolve => setTimeout(resolve, 2000));
-				(this.dialogOptions.component as any).save(true);
+				if (component instanceof FormContainer) await (component as FormContainer).save(true);
+				else e.dialog.close();
 				e.dialog.hideLoader();
-				e.dialog.close();
 			}
 		}
 	}

@@ -323,11 +323,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@omegagrid/commands", [\
-      ["npm:0.3.31", {\
-        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-commands-npm-0.3.31-7a5840cc5b-10c0.zip/node_modules/@omegagrid/commands/",\
+      ["npm:0.3.38", {\
+        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-commands-npm-0.3.38-a93362808b-10c0.zip/node_modules/@omegagrid/commands/",\
         "packageDependencies": [\
-          ["@omegagrid/commands", "npm:0.3.31"],\
-          ["@omegagrid/core", "npm:0.3.31"],\
+          ["@omegagrid/commands", "npm:0.3.38"],\
+          ["@omegagrid/core", "npm:0.3.38"],\
           ["lit", "npm:3.2.1"],\
           ["lit-html", "npm:3.2.1"],\
           ["ts-debounce", "npm:4.0.0"]\
@@ -336,13 +336,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@omegagrid/core", [\
-      ["npm:0.3.31", {\
-        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-core-npm-0.3.31-39063e4e13-10c0.zip/node_modules/@omegagrid/core/",\
+      ["npm:0.3.38", {\
+        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-core-npm-0.3.38-bd1a4173e1-10c0.zip/node_modules/@omegagrid/core/",\
         "packageDependencies": [\
-          ["@omegagrid/core", "npm:0.3.31"],\
+          ["@omegagrid/core", "npm:0.3.38"],\
           ["@fortawesome/fontawesome-svg-core", "npm:6.4.2"],\
-          ["@omegagrid/localize", "npm:0.3.31"],\
-          ["@riovir/wc-fontawesome", "virtual:39063e4e136e1b629d957fb94d32ae91fcef489b917120db780efb5ee28f6b8b5b43ff4f4abb3f4cacf976f9f280b793891d51a9f137ab956484dae100c6cf75#npm:0.1.14"],\
+          ["@omegagrid/localize", "npm:0.3.38"],\
+          ["@riovir/wc-fontawesome", "virtual:bd1a4173e19b26896572229053f23020ea3c635112d0d652a2da2795d8275e67f0c383d0fd6790774ea8e978ee461ec555ef9a6d9438d27a710a130477cd9e09#npm:0.1.14"],\
           ["color", "npm:4.2.3"],\
           ["date-fns", "npm:3.6.0"],\
           ["lit", "npm:3.2.1"],\
@@ -353,13 +353,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@omegagrid/dialog", [\
-      ["npm:0.3.31", {\
-        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-dialog-npm-0.3.31-694a448193-10c0.zip/node_modules/@omegagrid/dialog/",\
+      ["npm:0.3.38", {\
+        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-dialog-npm-0.3.38-f77e307eb3-10c0.zip/node_modules/@omegagrid/dialog/",\
         "packageDependencies": [\
-          ["@omegagrid/dialog", "npm:0.3.31"],\
+          ["@omegagrid/dialog", "npm:0.3.38"],\
           ["@fortawesome/fontawesome-svg-core", "npm:6.4.2"],\
-          ["@omegagrid/core", "npm:0.3.31"],\
-          ["@riovir/wc-fontawesome", "virtual:39063e4e136e1b629d957fb94d32ae91fcef489b917120db780efb5ee28f6b8b5b43ff4f4abb3f4cacf976f9f280b793891d51a9f137ab956484dae100c6cf75#npm:0.1.14"],\
+          ["@omegagrid/core", "npm:0.3.38"],\
+          ["@riovir/wc-fontawesome", "virtual:bd1a4173e19b26896572229053f23020ea3c635112d0d652a2da2795d8275e67f0c383d0fd6790774ea8e978ee461ec555ef9a6d9438d27a710a130477cd9e09#npm:0.1.14"],\
           ["lit", "npm:3.2.1"],\
           ["monaco-editor", "npm:0.45.0"],\
           ["ts-debounce", "npm:4.0.0"],\
@@ -369,12 +369,12 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@omegagrid/form", [\
-      ["npm:0.3.31", {\
-        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-form-npm-0.3.31-3bb7b1f4e1-10c0.zip/node_modules/@omegagrid/form/",\
+      ["npm:0.3.38", {\
+        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-form-npm-0.3.38-cacf914b0c-10c0.zip/node_modules/@omegagrid/form/",\
         "packageDependencies": [\
-          ["@omegagrid/form", "npm:0.3.31"],\
-          ["@omegagrid/core", "npm:0.3.31"],\
-          ["@omegagrid/tree", "npm:0.3.31"],\
+          ["@omegagrid/form", "npm:0.3.38"],\
+          ["@omegagrid/core", "npm:0.3.38"],\
+          ["@omegagrid/tree", "npm:0.3.38"],\
           ["lit", "npm:3.2.1"],\
           ["lit-html", "npm:3.2.1"],\
           ["ts-debounce", "npm:4.0.0"]\
@@ -383,21 +383,21 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@omegagrid/localize", [\
-      ["npm:0.3.31", {\
-        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-localize-npm-0.3.31-e3470bb74f-10c0.zip/node_modules/@omegagrid/localize/",\
+      ["npm:0.3.38", {\
+        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-localize-npm-0.3.38-afee5c12f3-10c0.zip/node_modules/@omegagrid/localize/",\
         "packageDependencies": [\
-          ["@omegagrid/localize", "npm:0.3.31"]\
+          ["@omegagrid/localize", "npm:0.3.38"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@omegagrid/tree", [\
-      ["npm:0.3.31", {\
-        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-tree-npm-0.3.31-d28cbe6569-10c0.zip/node_modules/@omegagrid/tree/",\
+      ["npm:0.3.38", {\
+        "packageLocation": "../../Users/petr/AppData/Local/Yarn/Berry/cache/@omegagrid-tree-npm-0.3.38-824bcbfb74-10c0.zip/node_modules/@omegagrid/tree/",\
         "packageDependencies": [\
-          ["@omegagrid/tree", "npm:0.3.31"],\
-          ["@omegagrid/core", "npm:0.3.31"],\
-          ["@omegagrid/localize", "npm:0.3.31"],\
+          ["@omegagrid/tree", "npm:0.3.38"],\
+          ["@omegagrid/core", "npm:0.3.38"],\
+          ["@omegagrid/localize", "npm:0.3.38"],\
           ["date-fns", "npm:3.6.0"],\
           ["lit", "npm:3.2.1"],\
           ["lit-html", "npm:3.2.1"],\
@@ -422,16 +422,18 @@ const RAW_RUNTIME_STATE =
           ["@prokotol/client", "workspace:packages/prktl-client"],\
           ["@fortawesome/fontawesome-svg-core", "npm:6.4.2"],\
           ["@fortawesome/free-solid-svg-icons", "npm:6.4.2"],\
-          ["@omegagrid/commands", "npm:0.3.31"],\
-          ["@omegagrid/core", "npm:0.3.31"],\
-          ["@omegagrid/dialog", "npm:0.3.31"],\
-          ["@omegagrid/form", "npm:0.3.31"],\
-          ["@omegagrid/localize", "npm:0.3.31"],\
-          ["@omegagrid/tree", "npm:0.3.31"],\
+          ["@omegagrid/commands", "npm:0.3.38"],\
+          ["@omegagrid/core", "npm:0.3.38"],\
+          ["@omegagrid/dialog", "npm:0.3.38"],\
+          ["@omegagrid/form", "npm:0.3.38"],\
+          ["@omegagrid/localize", "npm:0.3.38"],\
+          ["@omegagrid/tree", "npm:0.3.38"],\
           ["@prokotol/protocol", "workspace:packages/prktl-protocol"],\
+          ["@types/qs", "npm:6.9.16"],\
           ["dotenv", "npm:16.4.5"],\
           ["html-webpack-plugin", "virtual:2662dca96bc9d8dac51b50667e9679a315e831a0e2ca8f71d06c3f2bf3ce96b38ad0b3e93ea6249a3e00364f6c77c295ea7f52a9b5e8a8ff1bbb35fba5b2d6b0#npm:5.6.2"],\
           ["lit", "npm:3.2.1"],\
+          ["qs", "npm:6.13.0"],\
           ["ts-loader", "virtual:2662dca96bc9d8dac51b50667e9679a315e831a0e2ca8f71d06c3f2bf3ce96b38ad0b3e93ea6249a3e00364f6c77c295ea7f52a9b5e8a8ff1bbb35fba5b2d6b0#npm:9.5.1"],\
           ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"],\
           ["webpack", "virtual:2662dca96bc9d8dac51b50667e9679a315e831a0e2ca8f71d06c3f2bf3ce96b38ad0b3e93ea6249a3e00364f6c77c295ea7f52a9b5e8a8ff1bbb35fba5b2d6b0#npm:5.95.0"],\
@@ -467,6 +469,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./packages/prktl-server/",\
         "packageDependencies": [\
           ["@prokotol/server", "workspace:packages/prktl-server"],\
+          ["@prokotol/protocol", "workspace:packages/prktl-protocol"],\
           ["@types/express", "npm:4.17.21"],\
           ["@types/node", "npm:22.7.7"],\
           ["dotenv", "npm:16.4.5"],\
@@ -487,10 +490,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:39063e4e136e1b629d957fb94d32ae91fcef489b917120db780efb5ee28f6b8b5b43ff4f4abb3f4cacf976f9f280b793891d51a9f137ab956484dae100c6cf75#npm:0.1.14", {\
-        "packageLocation": "./.yarn/__virtual__/@riovir-wc-fontawesome-virtual-6f759dc45e/3/Users/petr/AppData/Local/Yarn/Berry/cache/@riovir-wc-fontawesome-npm-0.1.14-1874d0e30a-10c0.zip/node_modules/@riovir/wc-fontawesome/",\
+      ["virtual:bd1a4173e19b26896572229053f23020ea3c635112d0d652a2da2795d8275e67f0c383d0fd6790774ea8e978ee461ec555ef9a6d9438d27a710a130477cd9e09#npm:0.1.14", {\
+        "packageLocation": "./.yarn/__virtual__/@riovir-wc-fontawesome-virtual-841877bf39/3/Users/petr/AppData/Local/Yarn/Berry/cache/@riovir-wc-fontawesome-npm-0.1.14-1874d0e30a-10c0.zip/node_modules/@riovir/wc-fontawesome/",\
         "packageDependencies": [\
-          ["@riovir/wc-fontawesome", "virtual:39063e4e136e1b629d957fb94d32ae91fcef489b917120db780efb5ee28f6b8b5b43ff4f4abb3f4cacf976f9f280b793891d51a9f137ab956484dae100c6cf75#npm:0.1.14"],\
+          ["@riovir/wc-fontawesome", "virtual:bd1a4173e19b26896572229053f23020ea3c635112d0d652a2da2795d8275e67f0c383d0fd6790774ea8e978ee461ec555ef9a6d9438d27a710a130477cd9e09#npm:0.1.14"],\
           ["@fortawesome/fontawesome-svg-core", "npm:6.4.2"],\
           ["@types/fortawesome__fontawesome-svg-core", null]\
         ],\
