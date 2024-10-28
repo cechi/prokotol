@@ -39,40 +39,42 @@ type Entity = {
 	/* unique identifier of the entity within the PRKTL server */
 	id: PRKTLID;
 	/* created at */
-	ca: Timestamp;
+	ca?: Timestamp;
 	/** created by user */
-	cb: PRKTLID;
+	cb?: PRKTLID;
 	/* deleted at */
-	da: Timestamp;
+	da?: Timestamp;
 	/** deleted by user */
-	db: PRKTLID;
+	db?: PRKTLID;
 }
 
 export type Server = {
 	/* domain of the server */
 	d: string;
 	/* tags of the server */
-	t: Tags;
+	t?: Tags;
 }
 
 export type Space = Entity & {
 	/* id of the parent space */
-	sid: PRKTLID;
+	sid?: PRKTLID_S;
 	/* name of the space */
-	n: string;
+	n?: string;
 	/* tags of the space */
-	t: Tags;
+	t?: Tags;
 }
 
 export type Message = Entity & {
 	/* id of the parent space */
-	sid: PRKTLID;
+	sid?: PRKTLID_S;
+	/* id of the parent message */
+	mid: PRKTLID_M;
 	/* content of the message */
-	d: string;
+	d?: string;
 	/* tags OF the message */
-	t: Tags;
+	t?: Tags;
 	/** type of the message */
-	z: string;
+	z?: string;
 }
 
 export type User = Entity & {
@@ -91,11 +93,14 @@ export type Subscription = Entity & {
 	sid: PRKTLID;
 }
 
-export type SpaceFilter = {};
+export type SortDiraction = 1 | -1;
 
-export type UserFilter = {};
-
-export type MessageFilter = {};
+export type SearchOptions = {
+	sort?: [string, SortDiraction][],
+	limit?: number,
+	offset?: number,
+	filter?: any
+};
 
 export interface PRKTRelay {
 
@@ -115,7 +120,7 @@ export interface PRKTRelay {
 	 * Delete a space
 	 * @param id Id of the space to be deleted
 	 */
-	deleteSpace(id: PRKTLID): Promise<void>;
+	deleteSpace(id: PRKTLID): Promise<Space>;
 
 	/**
 	 * Get a space
@@ -126,7 +131,7 @@ export interface PRKTRelay {
 	/**
 	 * Get spaces by specified filter
 	 */
-	getSpaces(filter: SpaceFilter): Promise<Space[]>;
+	getSpaces(options: SearchOptions): Promise<Space[]>;
 
 	/**
 	 * Create a new message
@@ -155,7 +160,7 @@ export interface PRKTRelay {
 	/**
 	 * Get messages by specified filter
 	 */
-	getMessages(filter: MessageFilter): Promise<Message[]>;
+	getMessages(options: SearchOptions): Promise<Message[]>;
 
 	/**
 	 * Create a new user
@@ -184,7 +189,7 @@ export interface PRKTRelay {
 	/**
 	 * Get users by specified filter
 	 */
-	getUsers(filter: UserFilter): Promise<User[]>;
+	getUsers(options: SearchOptions): Promise<User[]>;
 
 }
 

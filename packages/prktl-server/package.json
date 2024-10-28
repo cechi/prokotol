@@ -11,6 +11,7 @@
 		"nodemon": "nodemon --help config"
 	},
 	"devDependencies": {
+		"@types/body-parser": "^1",
 		"@types/express": "^4",
 		"@types/node": "^22.7.7",
 		"nodemon": "^3.1.7",
@@ -19,6 +20,7 @@
 	},
 	"dependencies": {
 		"@prokotol/protocol": "workspace:^",
+		"body-parser": "^1.20.3",
 		"dotenv": "^16.4.5",
 		"express": "^4.21.1",
 		"mongodb": "^6.9.0"

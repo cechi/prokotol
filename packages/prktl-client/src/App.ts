@@ -2,7 +2,6 @@ import { css, html } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { BaseElement } from './ui/BaseElement';
 import { CommandWindow } from '@omegagrid/commands';
-import { Container } from './model/Container';
 import { Dialog, DialogEvent } from '@omegagrid/dialog';
 import { createRef, ref } from 'lit/directives/ref.js';
 import { ComponentFactory, ComponentId } from '@omegagrid/core';
@@ -30,8 +29,14 @@ export class App extends BaseElement {
 		prktl-sidebar {
 			width: 20%;
 			background-color: #f0f0f0;
+			border-right: 1px solid var(--og-border-color);
 		}
 
+		prktl-strip {
+			width: 30px;
+			border-right: 1px solid var(--og-border-color);
+		}
+			
 		prktl-message-container {
 			flex: 1;
 		}
@@ -39,9 +44,6 @@ export class App extends BaseElement {
 
 	@query('og-commands')
 	commands: CommandWindow;
-
-	@property({type: Object})
-	container: Container;
 
 	dialogRef = createRef<Dialog>();
 	get dialog() { return this.dialogRef?.value; }
@@ -53,9 +55,7 @@ export class App extends BaseElement {
 	}
 
 	createComponent: ComponentFactory<BaseElement> = async (id: ComponentId) => {
-		const c = await createComponent(id, this.container) as BaseElement;
-		c.container = this.container;
-		return c;
+		return await createComponent(id) as BaseElement;
 	}
 
 	connectedCallback() {
@@ -103,9 +103,10 @@ export class App extends BaseElement {
 			<div slot="content">Dialog body</div>
 		</og-dialog>
 
-		<prktl-sidebar .container="${this.container}">sidebar</prktl-sidebar>
 
-		<prktl-message-container .container="${this.container}"></prktl-message-container>
+		<prktl-strip></prktl-strip>
+		<prktl-sidebar></prktl-sidebar>
+		<prktl-message-container></prktl-message-container>
 	`;
 
 }

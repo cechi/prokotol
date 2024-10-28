@@ -90,19 +90,22 @@ export class Client extends EventTarget {
 		if (this.options.throwExceptions) throw new ClientException(error, method);
 	}
 
-	async get<T = unknown>(path: string, params?: RequestParams, headers?: RequestHeaders): Promise<T> {
-		const response = await this.getRaw(path, params, headers);
-		const contentType = response.headers.get('Content-Type');
+	async handleResponse<TResult>(response: Response) : Promise<TResult> {
 		if (!response.ok) {
 			this.handleError(response, {method: 'get', args: arguments});
 			return null;
 		}
 
-		if (contentType == 'application/json') {
-			return await response.json() as T;
+		if (/application\/json/.test(response.headers.get('Content-Type'))) {
+			return await response.json() as TResult;
 		} else {
-			return await response.text() as T;
+			return await response.text() as TResult;
 		}
+	}
+
+	async get<T = unknown>(path: string, params?: RequestParams, headers?: RequestHeaders): Promise<T> {
+		const response = await this.getRaw(path, params, headers);
+		return await this.handleResponse<T>(response);
 	}
 
 	postRaw(path: string, data: unknown, params?: RequestParams, headers?: RequestHeaders): Promise<Response> {
@@ -120,17 +123,7 @@ export class Client extends EventTarget {
 	
 	async post<T = unknown>(path: string, data: unknown, params?: RequestParams, headers?: RequestHeaders): Promise<T> {
 		const response = await this.postRaw(path, data, params, headers);
-		const contentType = response.headers.get('Content-Type');
-		if (!response.ok) {
-			this.handleError(response, {method: 'post', args: arguments});
-			return null;
-		}
-
-		if (contentType == 'application/json') {
-			return await response.json() as T;
-		} else {
-			return await response.text() as T;
-		}
+		return await this.handleResponse<T>(response);
 	}
 
 	deleteRaw(path: string, params?: RequestParams, headers?: RequestHeaders): Promise<Response> {
@@ -141,11 +134,9 @@ export class Client extends EventTarget {
 		});
 	}
 
-	async delete(path: string, params?: RequestParams, headers?: RequestHeaders): Promise<void> {
+	async delete<T = unknown>(path: string, params?: RequestParams, headers?: RequestHeaders): Promise<T> {
 		const response = await this.deleteRaw(path, params, headers);
-		if (!response.ok) {
-			this.handleError(response, {method: 'delete', args: arguments});
-		}
+		return await this.handleResponse<T>(response);
 	}
 
 	putRaw(path: string, data: unknown, params?: RequestParams, headers?: RequestHeaders): Promise<Response> {
@@ -163,17 +154,7 @@ export class Client extends EventTarget {
 
 	async put<T = unknown>(path: string, data: unknown, params?: RequestParams, headers?: RequestHeaders) {
 		const response = await this.putRaw(path, data, params, headers);
-		const contentType = response.headers.get('Content-Type');
-		if (!response.ok) {
-			this.handleError(response, {method: 'put', args: arguments});
-			return null;
-		}
-
-		if (contentType == 'application/json') {
-			return await response.json() as T;
-		} else {
-			return await response.text() as T;
-		}
+		return await this.handleResponse<T>(response);
 	}
 
 }

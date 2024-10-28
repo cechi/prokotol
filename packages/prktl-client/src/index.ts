@@ -3,36 +3,42 @@ export * from './ui';
 export * from '@omegagrid/core';
 export * from '@omegagrid/commands';
 export * from '@omegagrid/dialog';
+export * from '@omegagrid/tree';
+import './global';
 
 import { dom, getThemeManager } from '@omegagrid/core';
 import { registerIcons } from './icons';
-import { Container } from './model/Container';
+import { prktl } from './container';
 import { App } from './App';
-import { Relay } from './model/Relay';
-import { validate } from '@prokotol/protocol/dist/validators';
+import { Relay } from './protocol/Relay';
+import { store } from './store';
 
 registerIcons();
-
-const container = new Container();
 
 const url = new URL(window.location.href);
 const PRKTL_API_URL = url.origin + url.pathname + '_prktl';
 
 // themes
-container.themeManager = getThemeManager();
-const theme = container.themeManager.themes.get('light');
+prktl.themeManager = getThemeManager();
+const theme = prktl.themeManager.themes.get('light');
 theme.definition['font-family'] = 'consolas, Arial, Helvetica, sans-serif';
 theme.accentColor = '#8000B0';
-container.themeManager.activate(theme.name);
+prktl.themeManager.activate(theme.name);
 
 // mian app component
-container.app = dom.createElement<App>('prktl-app');
-container.app.container = container;
+prktl.app = dom.createElement<App>('prktl-app');
 
 // api client
-container.relay = new Relay({
+prktl.relay = new Relay({
 	baseUrl: PRKTL_API_URL,
 });
 
 dom.empty(document.body);
-dom.appendElement(document.body, container.app);
+dom.appendElement(document.body, prktl.app);
+
+prktl.store = store;
+prktl.store.getState().fetchSpaces();
+
+// prktl.events.subscribe('space.change', () => {
+// 	prktl.store.getState().fetchSpaces();
+// });

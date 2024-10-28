@@ -53,8 +53,8 @@ export default (env, args) => {
 			// 	{directory: '../rp-static', publicPath: '/'},
 			// ],
 			proxy: [{
-				context: ['/ms'],
-				target: `${process.env.PRKTL_HOST}:${process.env.PRKTL_SERVER_PORT || 3000}`,
+				context: ['/_prktl'],
+				target: `${process.env.PRKTL_SERVER_URL}`,
 				secure: false,
 				changeOrigin: true
 			}],

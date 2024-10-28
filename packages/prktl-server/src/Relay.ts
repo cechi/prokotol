@@ -1,15 +1,21 @@
 import * as prktl from "@prokotol/protocol/dist/types";
+import { Db } from "mongodb";
+import { convertFindArgs } from "./utils";
 
 export class Relay implements prktl.PRKTRelay {
+	
+	constructor(private db: Db) { }
+
 	async createSpace(space: prktl.Space): Promise<prktl.Space> {
-		throw new Error('Method not implemented.');
+		await this.db.collection<prktl.Space>('spaces').insertOne(space);
+		return space;
 	}
 
 	async updateSpace(space: prktl.Space): Promise<prktl.Space> {
 		throw new Error('Method not implemented.');
 	}
 
-	async deleteSpace(id: prktl.PRKTLID_S): Promise<void> {
+	async deleteSpace(id: prktl.PRKTLID_S): Promise<prktl.Space> {
 		throw new Error('Method not implemented.');
 	}
 
@@ -17,8 +23,8 @@ export class Relay implements prktl.PRKTRelay {
 		throw new Error('Method not implemented.');
 	}
 
-	async getSpaces(filter: prktl.SpaceFilter): Promise<prktl.Space[]> {
-		throw new Error('Method not implemented.');
+	async getSpaces(options: prktl.SearchOptions): Promise<prktl.Space[]> {
+		return await this.db.collection<prktl.Space>('spaces').find(...convertFindArgs(options)).toArray();
 	}
 
 	async createMessage(message: prktl.Message): Promise<prktl.Message> {
@@ -37,7 +43,7 @@ export class Relay implements prktl.PRKTRelay {
 		throw new Error('Method not implemented.');
 	}
 
-	async getMessages(filter: prktl.MessageFilter): Promise<prktl.Message[]> {
+	async getMessages(options: prktl.SearchOptions): Promise<prktl.Message[]> {
 		throw new Error('Method not implemented.');
 	}
 
@@ -57,7 +63,7 @@ export class Relay implements prktl.PRKTRelay {
 		throw new Error('Method not implemented.');
 	}
 
-	async getUsers(filter: prktl.UserFilter): Promise<prktl.User[]> {
+	async getUsers(options: prktl.SearchOptions): Promise<prktl.User[]> {
 		throw new Error('Method not implemented.');
 	}
 }

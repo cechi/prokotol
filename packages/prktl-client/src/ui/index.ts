@@ -4,4 +4,7 @@ export * from './MessageStream';
 export * from './MessageView';
 export * from './Sidebar';
 export * from './Spaces';
+export * from './SpaceButton';
+export * from './Strip';
 export * from './Header';
+export * from './UserButton';

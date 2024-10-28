@@ -21,14 +21,15 @@
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "6.4.2",
 		"@fortawesome/free-solid-svg-icons": "6.4.2",
-		"@omegagrid/commands": "^0.3.38",
-		"@omegagrid/core": "^0.3.38",
-		"@omegagrid/dialog": "^0.3.38",
-		"@omegagrid/form": "^0.3.38",
-		"@omegagrid/localize": "^0.3.38",
-		"@omegagrid/tree": "^0.3.38",
+		"@omegagrid/commands": "^0.3.39",
+		"@omegagrid/core": "^0.3.39",
+		"@omegagrid/dialog": "^0.3.39",
+		"@omegagrid/form": "^0.3.39",
+		"@omegagrid/localize": "^0.3.39",
+		"@omegagrid/tree": "^0.3.39",
 		"@prokotol/protocol": "workspace:^",
 		"lit": "^3.2.1",
-		"qs": "^6.13.0"
+		"qs": "^6.13.0",
+		"zustand": "^5.0.0"
 	}
 }

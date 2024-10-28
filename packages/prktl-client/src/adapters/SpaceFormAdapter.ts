@@ -1,9 +1,10 @@
 import { FormAdapter, FormAlert, FormColumn, FormControlProperties, FormControlType, FormValues } from "@omegagrid/form";
-import { Relay } from "../model/Relay";
+import { PRKTLID, Space } from "@prokotol/protocol/dist/types";
+import { prktl } from "../container";
 
 export class SpaceFormAdapter extends FormAdapter {
 
-	constructor(private relay: Relay, private spaceId?: string) {
+	constructor(id?: PRKTLID) {
 		super();
 	}
 
@@ -12,22 +13,42 @@ export class SpaceFormAdapter extends FormAdapter {
 	}
 
 	getControls(id: number|string): FormControlProperties[] {
+		const testName = 'test_' + Date.now();
 		return [{
 			row: 0,
 			col: 0,
 			type: FormControlType.Label,
-			value: 'Name'
+			value: 'ID'
 		}, {
+			key: 'id',
 			row: 0,
 			col: 1,
 			type: FormControlType.TextInput,
 			required: true,
+			value: testName
+		}, {
+			row: 1,
+			col: 0,
+			type: FormControlType.Label,
+			value: 'Name'
+		}, {
+			key: 'name',
+			row: 1,
+			col: 1,
+			type: FormControlType.TextInput,
+			required: false,
+			value: testName
 		}];
 	}
 
 	async save(values: Map<string | number, FormValues>): Promise<boolean | FormAlert[]> {
-		//await this.relay.createSpace();
-		console.log('save', values);
+		const data = values.get(0);
+		const space: Space = {
+			id: data['id'] as string,
+			n: data['name'] as string,
+		};
+		prktl.store.getState().addSpace(space);
+		// await this.container.relay.createSpace(space);
 		return true;
 	}
 }

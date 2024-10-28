@@ -1,8 +1,7 @@
 import { LitElement, css } from 'lit';
-import { property } from 'lit/decorators.js';
-import { Container } from '../model/Container';
+import type { StoreApi } from 'zustand/vanilla';
 
-export class BaseElement extends LitElement {
+export class BaseElement<TState = unknown> extends LitElement {
 
 	static styles = [css`
 		* {
@@ -14,7 +13,18 @@ export class BaseElement extends LitElement {
 		}	
 	`];
 
-	@property({type: Object})
-	container: Container;
+	state: TState;
+
+	unsubscribe: () => void;
+
+	subscribe(store: StoreApi<TState>, listener: (state: TState) => void): void {
+		this.state = store.getState();
+		this.unsubscribe = store.subscribe(listener);
+	}
+
+	disconnectedCallback(): void {
+		super.disconnectedCallback();
+		if (this.unsubscribe) this.unsubscribe();
+	}
 
 }

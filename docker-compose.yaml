@@ -3,27 +3,29 @@ services:
     container_name: prktl-mongo
     image: mongo
     restart: unless-stopped
+    ports:
+      - 27017:27017
     environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      MONGO_INITDB_ROOT_USERNAME: ${PRKTL_MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${PRKTL_MONGO_PASSWORD}
     networks:
       - net-prktl-mongo
       
-  prktl-mongo-express:
-    container_name: prktl-mongo-express
-    image: mongo-express
-    restart: unless-stopped
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_ROOT_USERNAME}
-      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_ROOT_PASSWORD}
-      ME_CONFIG_MONGODB_URL: mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@prktl-mongo:27017/
-      ME_CONFIG_BASICAUTH: false
-    depends_on: 
-      - prktl-mongo
-    networks:
-      - net-prktl-mongo
+  # prktl-mongo-express:
+  #   container_name: prktl-mongo-express
+  #   image: mongo-express
+  #   restart: unless-stopped
+  #   ports:
+  #     - 8081:8081
+  #   environment:
+  #     ME_CONFIG_MONGODB_ADMINUSERNAME: ${PRKTL_MONGO_USERNAME}
+  #     ME_CONFIG_MONGODB_ADMINPASSWORD: ${PRKTL_MONGO_PASSWORD}
+  #     ME_CONFIG_MONGODB_URL: mongodb://${PRKTL_MONGO_USERNAME}:${PRKTL_MONGO_PASSWORD}@prktl-mongo:27017/
+  #     ME_CONFIG_BASICAUTH: false
+  #   depends_on: 
+  #     - prktl-mongo
+  #   networks:
+  #     - net-prktl-mongo
 
 networks:
   net-prktl-mongo:

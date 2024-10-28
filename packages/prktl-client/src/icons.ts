@@ -5,13 +5,15 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons/faPaperPlane';
 import { faLayerGroup } from '@fortawesome/free-solid-svg-icons/faLayerGroup';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner';
+import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 
 const faIcons: IconDefinition[] = [
 	faPlay,
 	faPaperPlane,
 	faLayerGroup,
 	faPlus,
-	faSpinner
+	faSpinner,
+	faUser
 ];
 
 export const registerIcons = () => {
